@@ -1,0 +1,29 @@
+{
+    "singers": [
+        {
+            "singer_name": "赵雷",
+            "singer_id": 334455,
+            "id": 1
+        },
+        {
+            "singer_name": "宋东野",
+            "singer_id": 111111,
+            "id": 2
+        },
+        {
+            "singer_name": "痛仰乐队",
+            "singer_id": 222222,
+            "id": 3
+        },
+        {
+            "singer_name": "高桥优",
+            "singer_id": 333333,
+            "id": 4
+        },
+        {
+            "singer_name": "back number",
+            "singer_id": 444444,
+            "id": 5
+        }
+    ]
+}
