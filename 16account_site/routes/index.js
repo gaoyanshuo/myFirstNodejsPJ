@@ -15,7 +15,7 @@ router.get('/', function (req, res, next) {
 router.get('/account/', (req, res, next) => {
   const account_list = db.get('accounts').value();
   console.log('account_list', account_list);
-  res.render('account', {account_list});
+  res.render('account', { account_list });
 });
 
 // add account
@@ -35,6 +35,13 @@ router.post('/account/', (req, res, next) => {
 // create account
 router.get('/account/create', (req, res, next) => {
   res.render('create');
+});
+
+// remove account
+router.get('/account/delete/:id', (req, res, next) => {
+  const id = req.params.id;
+  db.get('accounts').remove({ id }).write();
+  res.render('success', { success_msg: 'remove successed!', url: '/account' });
 });
 
 module.exports = router;

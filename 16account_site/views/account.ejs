@@ -22,12 +22,17 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-lg-8 col-lg-offset-2">
-          <h2>记账本</h2>
+          <h2>家計簿</h2>
           <hr />
           <div class="accounts">
+            <div class="alert" role="alert" style="text-align: center;">
+              <h3><a href="/account/create">新規追加</a></h3>
+            </div>
             <% account_list.forEach(account => { %>
             <div class="panel panel-<%= account.type === '1' ? 'success' : 'danger' %>">
-              <div class="panel-heading"><%= account.title %></div>
+              <div class="panel-heading" style="display: flex;justify-content: space-between;">
+                <span><%= account.title %></span><span><%= account.remarks %></span>
+              </div>
               <div class="panel-body">
                 <div class="col-xs-6"><%= account.time %></div>
                 <div class="col-xs-2 text-center">
@@ -35,7 +40,9 @@
                 </div>
                 <div class="col-xs-2 text-right"><%= account.account %>円</div>
                 <div class="col-xs-2 text-right">
-                  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                  <a href="/account/delete/<%= account.id %>">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                  </a>
                 </div>
               </div>
             </div>
