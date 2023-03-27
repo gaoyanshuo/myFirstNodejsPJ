@@ -17,22 +17,32 @@ mongoose.connection.once('open', () => {
   // 5. create document(row) object
   // Schema: 结构 (数据记录行/文档)对象
   // 设置文档的属性及其属性值的类型
+  // String, Number, Boolean, Array, Date, Buffer, ObjectId
+  // fk: mongoose.Schema.ObjectId
+
   let BookSchema = mongoose.Schema({
     name: String,
     author: String,
     price: Number,
+    is_sale: Boolean,
+    pub_time: Date,
+    tags: Array,
   });
   // 6. create model object 对文档操作的封装对象
   // CRUD for schema
   let bookModel = mongoose.model('books', BookSchema);
 
   // 7. add document (row) & close connect
-  bookModel.create({
+  bookModel
+    .create({
       name: '蛤蟆先生去看心理医生',
       author: 'xxx',
       price: 2000,
+      is_sale: true,
+      pub_time: new Date(),
+      tags: [1, 2, 3],
     })
     .then(result => console.log(result))
     .catch(error => console.error(error))
-    .finally(() => mongoose.disconnect())
+    .finally(() => mongoose.disconnect());
 });
