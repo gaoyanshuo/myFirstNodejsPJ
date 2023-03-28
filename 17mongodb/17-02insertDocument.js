@@ -42,7 +42,24 @@ mongoose.connection.once('open', () => {
       pub_time: new Date(),
       tags: [1, 2, 3],
     })
-    .then(result => console.log(result))
-    .catch(error => console.error(error))
+    .then((result) => console.log(result))
+    .catch((error) => console.error(error))
     .finally(() => mongoose.disconnect());
+
+  // BookModel.insertOne({})
+
+  // BookModel.insertMany([
+  //   {
+  //     name: '西游记',
+  //     author: '吴承恩',
+  //     price: 19.9,
+  //     is_hot: true,
+  //   },
+  //   {
+  //     name: '红楼梦',
+  //     author: '曹雪芹',
+  //     price: 29.9,
+  //     is_hot: true,
+  //   }
+  // ])
 });
