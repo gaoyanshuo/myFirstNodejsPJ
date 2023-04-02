@@ -1,0 +1,20 @@
+{
+  "accounts": [
+    {
+      "id": "aEAvBzcD6",
+      "title": "aaa",
+      "time": "2023-03-26",
+      "type": "1",
+      "account": "1000",
+      "remarks": "commont"
+    },
+    {
+      "id": "-wCtRtmbX",
+      "title": "aaa",
+      "time": "2023-03-26",
+      "type": "-1",
+      "account": "1000",
+      "remarks": "commont"
+    }
+  ]
+}

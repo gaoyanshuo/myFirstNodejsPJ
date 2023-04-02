@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet" />
+    <style>
+      label {
+        font-weight: normal;
+      }
+      .panel-body .glyphicon-remove {
+        display: none;
+      }
+      .panel-body:hover .glyphicon-remove {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-lg-8 col-lg-offset-2">
+          <h2>家計簿</h2>
+          <hr />
+          <div class="accounts">
+            <div class="alert" role="alert" style="text-align: center;">
+              <h3><a href="/account/create">新規追加</a></h3>
+            </div>
+            <% account_list.forEach(account => { %>
+            <div class="panel panel-<%= account.type === '1' ? 'success' : 'danger' %>">
+              <div class="panel-heading" style="display: flex;justify-content: space-between;">
+                <span><%= account.title %></span><span><%= account.remarks %></span>
+              </div>
+              <div class="panel-body">
+                <div class="col-xs-6"><%= account.time %></div>
+                <div class="col-xs-2 text-center">
+                  <span class="label label-<%= account.type === '1' ? 'success' : 'danger' %>"><%= account.type === '1' ? '収入' : '支出' %></span>
+                </div>
+                <div class="col-xs-2 text-right"><%= account.account %>円</div>
+                <div class="col-xs-2 text-right">
+                  <a href="/account/delete/<%= account.id %>">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
