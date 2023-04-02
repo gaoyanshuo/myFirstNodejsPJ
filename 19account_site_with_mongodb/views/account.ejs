@@ -24,12 +24,12 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-lg-8 col-lg-offset-2">
-      <h2>家計簿</h2>
+      <div class="row">
+        <h2 class="col-xs-6">家計簿</h2>
+        <h2 class="col-xs-6 text-right"><a href="/account/create" class="btn btn-primary">新規追加</a></h2>
+      </div>
       <hr/>
       <div class="accounts">
-        <div class="alert" role="alert" style="text-align: center;">
-          <h3><a href="/account/create">新規追加</a></h3>
-        </div>
         <% account_list.forEach(account => { %>
         <div class="panel panel-<%= account.type === 1 ? 'success' : 'danger' %>">
           <div class="panel-heading" style="display: flex;justify-content: space-between;">
