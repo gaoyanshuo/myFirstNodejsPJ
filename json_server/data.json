@@ -1,0 +1,7 @@
+{
+  "song": [
+    {"id" : 1, "name": "xx", "singer": "AW"},
+    {"id" : 2, "name": "yy", "singer": "Aimor"},
+    {"id" : 3, "name": "zz", "singer": "24K"}
+  ]
+}
